@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* --------------------------将其他类型转换为String--------------------------------------- */
+        /*
+            - 将其他类型转换为String 
+                1. 方法一：
+                    - 调用被转换数据类型的toString()方法 
+                    - 该方法不会影响到原变量，他会将转换的结果返回
+                    - 但是注意：null 和 undefined 这两个值没有 toString() 方法
+                        如果调用他们的方法，会报错
+        */
+
+        /*       var a = 123;
+              var b = a.toString();
+              console.log(typeof a);
+              console.log(typeof b);
+              console.log(a); */
+
+        /*  2. 方法二：
+            - 调用String()函数,并将被转换的数据作为参数传递给函数
+            - 使用String()函数做强制类型转换时，
+                - 对于Number和Boolean实际上就是调用的toString()方法
+                - 但是对于null 和 undefined ，就不会调用 toString()方法，它会将 null 直接转换为 "null"，将 undefined 直接转换为 "undefined"
+           */
+        /*     var c = 456;
+            var d = String(c);
+            console.log(typeof c);
+            console.log(typeof d);
+            console.log(d);
+     */
+
+        /* --------------------------将其他数据类型转换为Number--------------------------------------- */
+
+        /*  将其他数据类型转换为Number
+            - 方法一：
+            使用Number()函数
+                - 字符串 -- 数字
+                    1. 如果是纯数字的字符串，则直接转换为数字
+                    2. 如果字符串中农有非数字的内容，则转换为NaN
+                    3. 如果字符串是一个空串或者是一个全空格的字符串，则转换为0
+                - 布尔 -- 数字
+                    1. true 转为 1 
+                    2. false 转为 0 
+                - Null -- 数字
+                    1. 转为 0 
+                - undefined -- 数字
+                    1. 转为 NaN
+               */
+        /*    var a = "123";
+           a = Number(a);
+           console.log(typeof a);
+           console.log(a); */
+
+        /*
+        转换方式二 ：
+            - 这种方式专门用来对付字符串
+            1. parseInt() 将一个字符串转换为一个整数
+                - parseInt() 可以将一个字符串中的有效整数内容取出来，然后转换为 Number
+            2. parseFloot() 将一个字符串转换为一个浮点数
+                - parseFloot() 作用和 parseInt() 类型，不同的是可以获得有效的小数
+            3. 对于非 String 使用 parseInt() 或  parseFloot(),它会先将其转换为 String 然后操作
+        */
+        /*  var a = "12a.3px";
+         a = parseInt(a);
+         console.log(typeof a);
+         console.log(a); */
+
+        /* --------------------------将其他数据类型转换为Boolean--------------------------------------- */
+        /*
+        将其他数据类型转换为Boolean
+            - 使用Boolean()函数
+                - 数字 -- 布尔
+                    - 除了 0 和 NaN,其他都是 true
+                - 字符串 -- 布尔
+                    - 除了 空串，其余都是 true
+                - null 和 undefined 都会转换为 false
+                - 对象也会转换为true
+
+         */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
